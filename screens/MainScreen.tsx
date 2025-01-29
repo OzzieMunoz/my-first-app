@@ -1,37 +1,70 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const MainScreen = () => {
+const MainScreen: React.FC = () => {
     return (
-        <ScrollView contentContainerStyle={styles.container}>
-            <Text style={styles.title}>Welcome to Seasonal Bites</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>Seasonal Bites</Text>
             <Text style={styles.subtitle}>Discover what’s fresh and in season!</Text>
-            <Button title="Browse Seasonal Foods" onPress={() => {}} />
-            <Button title="View Saved Favorites" onPress={() => {}} />
-            <Button title="Logout" onPress={() => {}} />
-        </ScrollView>
+
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={() => {}}>
+                    <Text style={styles.buttonText}>Explore</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.button} onPress={() => {}}>
+                    <Text style={styles.buttonText}>Favorites</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={[styles.button, styles.logoutButton]} onPress={() => {}}>
+                    <Text style={styles.buttonText}>Sign Out</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow: 1,
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: '#f9f9f9',
+        backgroundColor: '#f5f5f5',
     },
     title: {
-        fontSize: 26,
+        fontSize: 36,
         fontWeight: 'bold',
-        marginBottom: 10,
+        color: '#2d936c',
         textAlign: 'center',
+        marginBottom: 10,
     },
     subtitle: {
         fontSize: 18,
         color: '#666',
-        marginBottom: 20,
         textAlign: 'center',
+        marginBottom: 20,
+    },
+    buttonContainer: {
+        width: '100%',
+        alignItems: 'center',
+    },
+    button: {
+        backgroundColor: '#2d936c',
+        borderRadius: 8,
+        paddingVertical: 12,
+        paddingHorizontal: 40,
+        marginVertical: 5, // Closer spacing between buttons
+        width: '80%', // Ensures consistent button width
+        alignItems: 'center',
+    },
+    logoutButton: {
+        backgroundColor: '#d9534f', // Red color for logout
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: '600',
     },
 });
 
