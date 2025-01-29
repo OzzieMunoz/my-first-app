@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, ScrollView } from 'react-native';
 
-const MainScreen: React.FC = () => {
+const MainScreen = () => {
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.title}>Welcome to Seasonal Bites</Text>
